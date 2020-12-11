@@ -47,6 +47,7 @@ public class ToDo implements ActionListener
 		// Panel to go into the scrollPane
 		JPanel scrollListPanel = new JPanel(new FlowLayout(FlowLayout.LEFT,0,0));
 		scrollListPanel.setBackground(grayBG);
+		
 		scrollPane.setViewportView(scrollListPanel);
 		
 		// Panel to go into the panel that's in the scollPane
@@ -69,10 +70,11 @@ public class ToDo implements ActionListener
 		inputTXT.setCaretColor(txtFG); // Caret color
 		inputTXT.setFont(new Font("Courier New",Font.PLAIN,12)); // Font
 		inputTXT.setBorder(new MatteBorder(0,0,1,0,txtFG)); // One sided border
+		
 		inPanel.add(inputTXT);
 		inputTXT.addActionListener(this);
 		
-		c.gridy = 1;
+		c.gridy = 1; // Places this below the scrollPane
 		mPanel.add(inPanel, c);
 		
 		mFrame.setVisible(true); // Do this at the end to refresh the components! (Don't have to resize each time)
